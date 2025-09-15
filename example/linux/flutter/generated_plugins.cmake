@@ -3,18 +3,13 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
-  file_saver
+  emoji_picker_flutter
   file_selector_linux
   gtk
-  media_kit_libs_linux
-  media_kit_video
-  pro_video_editor
   url_launcher_linux
-  volume_controller
 )
 
 list(APPEND FLUTTER_FFI_PLUGIN_LIST
-  onnxruntime
 )
 
 set(PLUGIN_BUNDLED_LIBRARIES)

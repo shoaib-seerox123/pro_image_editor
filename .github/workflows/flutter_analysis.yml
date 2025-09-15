@@ -13,21 +13,17 @@ jobs:
     steps:
       - name: Clone repository
         uses: actions/checkout@v4
-        
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
           channel: stable
-          flutter-version: 3.35.0
+          flutter-version: 3.24.0
 
-      - name: Install dependencies
+      - name: install dependencies
         run: flutter pub get
 
-      - name: Check formatting
-        run: dart format --output=none --set-exit-if-changed .
-
-      - name: Analyze code
+      - name: analyze code
         run: flutter analyze .
 
-      - name: Run tests
+      - name: run tests
         run: flutter test

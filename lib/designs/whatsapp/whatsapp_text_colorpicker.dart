@@ -4,7 +4,8 @@ import 'dart:math';
 // Flutter imports:
 import 'package:flutter/material.dart';
 
-import '/pro_image_editor.dart';
+// Project imports:
+import 'package:pro_image_editor/pro_image_editor.dart';
 
 /// A stateless widget that provides a color picker for text in the WhatsApp
 /// theme.
@@ -48,21 +49,25 @@ class WhatsappTextColorpicker extends StatelessWidget {
         child: BarColorPicker(
           configs: textEditor.configs,
           borderWidth:
-              textEditor.configs.designMode == ImageEditorDesignMode.material
+              textEditor.configs.designMode == ImageEditorDesignModeE.material
                   ? 0
                   : 2,
           showThumb:
-              textEditor.configs.designMode == ImageEditorDesignMode.material,
+              textEditor.configs.designMode == ImageEditorDesignModeE.material,
           length: min(
             200,
-            MediaQuery.sizeOf(context).height -
-                MediaQuery.viewInsetsOf(context).bottom -
+            MediaQuery.of(context).size.height -
+                MediaQuery.of(context).viewInsets.bottom -
                 kToolbarHeight -
                 20 -
                 barPickerPadding -
-                MediaQuery.paddingOf(context).top,
+                MediaQuery.of(context).padding.top,
           ),
-          color: textEditor.primaryColor,
+          onPositionChange: (value) {
+            textEditor.colorPosition = value;
+          },
+          initPosition: textEditor.colorPosition,
+          initialColor: textEditor.primaryColor,
           horizontal: false,
           thumbColor: Colors.white,
           cornerRadius: 10,

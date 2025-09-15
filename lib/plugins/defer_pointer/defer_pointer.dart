@@ -6,7 +6,6 @@ import 'dart:collection';
 // Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import '/shared/utils/unique_id_generator.dart';
 
 part 'deferred_pointer_handler_link.dart';
 part 'deferred_pointer_handler.dart';
@@ -34,7 +33,7 @@ class DeferPointer extends StatelessWidget {
   Widget build(BuildContext context) {
     final link = this.link ?? DeferredPointerHandler.of(context).link;
     return _DeferPointerRenderObjectWidget(
-      link: link,
+      link: link as DeferredPointerHandlerLink,
       deferPaint: paintOnTop,
       child: child,
     );

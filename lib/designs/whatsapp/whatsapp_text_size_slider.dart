@@ -4,7 +4,8 @@ import 'dart:math';
 // Flutter imports:
 import 'package:flutter/material.dart';
 
-import '/pro_image_editor.dart';
+// Project imports:
+import 'package:pro_image_editor/pro_image_editor.dart';
 
 /// A stateless widget that provides a text size slider in the WhatsApp theme.
 ///
@@ -45,11 +46,11 @@ class WhatsappTextSizeSlider extends StatelessWidget {
         width: 16,
         height: min(
             280,
-            MediaQuery.sizeOf(context).height -
-                MediaQuery.viewInsetsOf(context).bottom -
+            MediaQuery.of(context).size.height -
+                MediaQuery.of(context).viewInsets.bottom -
                 kToolbarHeight -
                 kBottomNavigationBarHeight -
-                MediaQuery.paddingOf(context).top),
+                MediaQuery.of(context).padding.top),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
