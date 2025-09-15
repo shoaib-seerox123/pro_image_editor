@@ -38,7 +38,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  emoji_picker_flutter: ^3.0.0
+  emoji_picker_flutter: ^4.3.0
   http: ^1.2.2
   image: ^4.2.0
   vibration: ^2.0.0
